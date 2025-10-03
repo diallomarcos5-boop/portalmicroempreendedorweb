@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://emissao.portal-expresso.click/#services -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PGMEI - Solução Completa para MEI</title>
+    <link rel="stylesheet" href="./index_files/all.min.css">
+    <style>
+        :root {
+            --primary-red: #CC0000;
+            --primary-black: #000000;
+            --dark-gray: #1A1A1A;
+            --light-gray: #F5F5F5;
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--white);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-black);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: var(--white);
+            font-size: 28px;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: var(--primary-red);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-red);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #AA0000;
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary-black);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-red);
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: var(--light-gray);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-card i {
+            font-size: 40px;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-black);
+        }
+        
+        /* Testimonials Section */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--primary-red);
+        }
+        
+        .testimonial-text {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            color: var(--primary-black);
+        }
+        
+        .author-info p {
+            color: var(--primary-red);
+            font-size: 14px;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            background-color: var(--light-gray);
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background-color: var(--primary-black);
+            color: var(--white);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 20px;
+            display: none;
+        }
+        
+        .faq-active .faq-answer {
+            display: block;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-black);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            color: var(--primary-red);
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--primary-red);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--dark-gray);
+            border-radius: 50%;
+            color: var(--white);
+            text-align: center;
+            line-height: 40px;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-red);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--dark-gray);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .about-text, .about-image {
+                padding: 0;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">PG<span>MEI</span></div>
+            <nav>
+                <ul>
+                    <li><a href="https://emissao.portal-expresso.click/#home">Início</a></li>
+                    <li><a href="https://emissao.portal-expresso.click/#about">Sobre</a></li>
+                    <li><a href="https://emissao.portal-expresso.click/#services">Serviços</a></li>
+                    <li><a href="https://emissao.portal-expresso.click/#testimonials">Depoimentos</a></li>
+                    <li><a href="https://emissao.portal-expresso.click/#faq">FAQ</a></li>
+                    <li><a href="https://emissao.portal-expresso.click/#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Solução Completa para MEI</h1>
+            <p>Gerador de DAS MEI e ferramentas essenciais para simplificar a vida do Microempreendedor Individual</p>
+            <a href="https://emissao.portal-expresso.click/#services" class="btn">Conheça nossos serviços</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>O que é o DAS MEI?</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>O Documento de Arrecadação do Simples Nacional (DAS) é a guia de pagamento mensal do Microempreendedor Individual (MEI). Através dele, o MEI paga seus impostos de forma unificada, incluindo:</p>
+                    <ul>
+                        <li>ISS (Imposto Sobre Serviços)</li>
+                        <li>ICMS (Imposto sobre Circulação de Mercadorias e Serviços)</li>
+                        <li>Valor fixo destinado ao INSS (Instituto Nacional do Seguro Social)</li>
+                    </ul>
+                    <p>O Gerador PGMEI simplifica o processo de emissão do DAS, tornando rápido e seguro para o microempreendedor manter sua regularidade fiscal.</p>
+                </div>
+                <div class="about-image">
+                    <img src="./index_files/photo-1581291518633-83b4ebd1d83e" alt="Documentos fiscais">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Serviços</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h3>Emissão de DAS MEI</h3>
+                    <p>Geração rápida e segura do Documento de Arrecadação do Simples Nacional para MEI.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Calculadora de Impostos</h3>
+                    <p>Calcule facilmente os valores a pagar mensalmente e anualmente como MEI.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Lembretes Automáticos</h3>
+                    <p>Receba alertas sobre vencimentos e obrigações acessórias para não correr riscos.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Relatórios Financeiros</h3>
+                    <p>Acompanhe seu faturamento e despesas com relatórios simples e intuitivos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Depoimentos</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"O PGMEI salvou meu negócio! Antes eu sempre me esquecia de pagar o DAS e acumulava multas. Agora com os lembretes e a facilidade de gerar a guia, nunca mais tive problemas com a Receita."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="./index_files/32.jpg" alt="Foto de Carla">
+                        <div class="author-info">
+                            <h4>Carla Mendonça</h4>
+                            <p>Designer Gráfica MEI</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"Como contador, recomendo o PGMEI para todos meus clientes microempreendedores. A plataforma é intuitiva, segura e elimina completamente os erros na emissão do DAS."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="./index_files/44.jpg" alt="Foto de Roberto">
+                        <div class="author-info">
+                            <h4>Roberto Alves</h4>
+                            <p>Contador</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"Uso o gerador há mais de 2 anos e nunca tive problemas. O processo é tão simples que leva menos de 3 minutos para emitir e pagar meu DAS mensal. Serviço essencial para todo MEI!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="./index_files/68.jpg" alt="Foto de Amanda">
+                        <div class="author-info">
+                            <h4>Amanda Santos</h4>
+                            <p>Consultora de Marketing MEI</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"Antes de conhecer o PGMEI, eu tinha dificuldades para entender as obrigações do MEI. Agora tudo ficou mais claro, e ainda consigo acompanhar meus pagamentos e manter tudo em dia."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="./index_files/72.jpg" alt="Foto de Marcelo">
+                        <div class="author-info">
+                            <h4>Marcelo Lima</h4>
+                            <p>Eletricista MEI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Perguntas Frequentes</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>O que é o DAS MEI?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O DAS MEI (Documento de Arrecadação do Simples Nacional) é a guia de pagamento mensal do Microempreendedor Individual. Através dela, o MEI paga de forma unificada seus impostos (ISS, ICMS) e a contribuição previdenciária.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Quando devo pagar o DAS MEI?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O DAS MEI deve ser pago até o dia 20 de cada mês, referente ao mês anterior. Por exemplo: o DAS de Janeiro vence até 20 de Fevereiro.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Quanto custa o DAS MEI?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O valor do DAS MEI é composto por: R$ 1,00 de ICMS (para comércio e indústria), R$ 5,00 de ISS (para serviços) e R$ 56,15 de contribuição para o INSS. O MEI que atua em comércio e serviços paga todos os valores, totalizando R$ 62,15 mensais.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Como o PGMEI ajuda na emissão do DAS?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O PGMEI simplifica todo o processo de emissão do DAS. Basta informar seu CNPJ e o sistema preenche automaticamente os dados, calcula o valor correto a pagar e gera a guia para impressão ou pagamento online.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Simplifique sua vida de MEI hoje mesmo</h2>
+            <p>Experimente gratuitamente por 7 dias e veja como é fácil manter suas obrigações em dia</p>
+            <a href="https://emissao.portal-expresso.click/#" class="btn">Começar Agora</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>PGMEI</h3>
+                    <p>A solução completa para Microempreendedores Individuais.</p>
+                    <div class="social-icons">
+                        <a href="https://emissao.portal-expresso.click/#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://emissao.portal-expresso.click/#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://emissao.portal-expresso.click/#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://emissao.portal-expresso.click/#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="https://emissao.portal-expresso.click/#home">Início</a></li>
+                        <li><a href="https://emissao.portal-expresso.click/#about">Sobre</a></li>
+                        <li><a href="https://emissao.portal-expresso.click/#services">Serviços</a></li>
+                        <li><a href="https://emissao.portal-expresso.click/#testimonials">Depoimentos</a></li>
+                        <li><a href="https://emissao.portal-expresso.click/#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> contato@pgmei.com.br</li>
+                        <li><i class="fas fa-phone"></i> (11) 3456-7890</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000 - São Paulo/SP</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2023 PGMEI - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('faq-active');
+            });
+        });
+    </script>
+<script defer="" src="./index_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;bdc98f44711045eda6817b6821b96fcd&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+</body></html>
